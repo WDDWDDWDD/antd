@@ -2,33 +2,17 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from 'antd';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import todoApp from './redux/reducers'
-let store = createStore(todoApp)
+
+import VisibleTodoList from './containers/VisibleTodoList'
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-          <Button type="primary">Button</Button>
+          <VisibleTodoList />
         </div>
-      </Provider>
+      
     );
   }
 }

@@ -1,11 +1,11 @@
-let state = [
+let initState = [
   {
     id:0,
     text:'222',
     completed: false 
   }
 ]
-const todos = (state = [], action) => {
+const todos = (state = initState, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
