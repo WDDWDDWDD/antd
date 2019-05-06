@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../redux/actions'
 
-let AddTodo = ({ dispatch }) => {
+let AddTodo = ({dispatch,history}) => {
   let input
-
+  console.log(history)
   return (
     <div>
       <form
@@ -15,6 +15,10 @@ let AddTodo = ({ dispatch }) => {
           }
           dispatch(addTodo(input.value))
           input.value = ''
+          history.push({
+            pathname:'/'
+          })
+          
         }}
       >
         <input
